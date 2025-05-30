@@ -13,8 +13,8 @@ import { UsersModule } from './users/users.module';
       type: 'mysql',
       host: 'localhost',
       port: 3306,
-      username: 'root',  // replace with your MySQL username
-      password: '#Nishant2002',  // replace with your MySQL password
+      username: 'root',  
+      password: '#Nishant2002',  
       database: 'store_rating_db',
       autoLoadEntities: true,
       synchronize: true,
