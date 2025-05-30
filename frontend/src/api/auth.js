@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:5000/api/auth'; // Change port if your backend uses a different one
+const API_BASE_URL = 'http://localhost:3000/api/auth'; 
 
 export async function signup(data) {
   const res = await fetch(`${API_BASE_URL}/signup`, {
@@ -23,5 +23,5 @@ export async function login(data) {
     const error = await res.json();
     throw new Error(error.message || 'Login failed');
   }
-  return res.json(); // token + user info
+  return res.json(); 
 }
