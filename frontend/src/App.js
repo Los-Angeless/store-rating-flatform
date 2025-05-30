@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css' // or  if you placed Tailwind there
+import './App.css' 
 
 import { Routes, Route, Link } from 'react-router-dom';
 import Signup from './pages/Signup';
