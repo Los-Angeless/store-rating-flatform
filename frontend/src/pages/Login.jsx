@@ -39,14 +39,14 @@ export default function Login() {
     }
 
     console.log('Login data is valid:', formData);
-    // TODO: Call backend login API
+  
     const handleSubmit = async e => {
   e.preventDefault();
 
   try {
-    const data = await login(formData); // send login data
-    localStorage.setItem('token', data.token); // store JWT
-    localStorage.setItem('user', JSON.stringify(data.user)); // optional
+    const data = await login(formData); 
+    localStorage.setItem('token', data.token); 
+    localStorage.setItem('user', JSON.stringify(data.user)); 
     alert('Login successful!');
   } catch (err) {
     alert(err.message);
