@@ -16,23 +16,20 @@ export default function Signup() {
   const validate = () => {
     const newErrors = {};
 
-    // Name validation
     if (formData.name.length < 20 || formData.name.length > 60) {
       newErrors.name = 'Name must be between 20 and 60 characters.';
     }
 
-    // Email validation (simple regex)
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       newErrors.email = 'Invalid email format.';
     }
 
-    // Address validation
+
     if (formData.address.length > 400) {
       newErrors.address = 'Address cannot exceed 400 characters.';
     }
 
-    // Password validation: 8-16 chars, 1 uppercase, 1 special char
     const passwordRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,16}$/;
     if (!passwordRegex.test(formData.password)) {
       newErrors.password = 'Password must be 8-16 chars, include at least one uppercase letter and one special character.';
@@ -54,12 +51,12 @@ export default function Signup() {
     }
 
     console.log('Signup data is valid:', formData);
-    // TODO: Call backend API to signup
+
     const handleSubmit = async e => {
   e.preventDefault();
 
   try {
-    const res = await signup(formData); // send data to backend
+    const res = await signup(formData); 
     alert('Signup successful! Please login.');
   } catch (err) {
     alert(err.message);
